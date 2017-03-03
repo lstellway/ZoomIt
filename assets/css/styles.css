@@ -15,6 +15,10 @@
     z-index: 10;
     display: block;
     position: absolute;
+    cursor: wait;
+}
+.zoomit-container.loaded .zoomit-ghost {
+    cursor: crosshair;
 }
 .zoomit-zoomed {
     top: 0;
