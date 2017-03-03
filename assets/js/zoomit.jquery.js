@@ -119,7 +119,7 @@
             options.status = 0;
             options.imgTag = null;
             options.img.parent().removeClass( options.class.loaded );
-            options.img.parent().find('.' + options.class.img).remove();
+            options.getZoomInstance().remove();
         };
 
         // Move zoom
@@ -139,11 +139,12 @@
             options.ghost = options.img.parent().find('.' + options.class.ghost);
 
             // Mouse events
-            options.ghost.on('mouseenter', function (event) {
+            options.ghost.on('mouseenter touchstart', function (event) {
                 options.show(event);
-            }).on('mouseleave', function () {
+            }).on('mouseleave touchend', function () {
                 options.hide();
-            }).on('mousemove', function (event) {
+            }).on('mousemove touchmove', function (event) {
+                event.preventDefault();
                 options.move(event);
             });
         };
