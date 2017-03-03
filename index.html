@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Zoozoom</title>
+
+<link rel="stylesheet" href="assets/css/styles.css" media="all" />
+</head>
+<body>
+
+<div class="zoomit-wrapper">
+    <img src="assets/images/kuala-large.jpg" data-zoomed="assets/images/kuala-original.jpg" alt="Fluffy cute Kuala">
+</div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="assets/js/zoomit.jquery.js"></script>
+<script type="text/javascript">
+(function(code){
+    code(document, window, jQuery);
+}(function(document, window, $){
+    $(function(){
+        $('img').zoomIt();
+    });
+}));
+</script>
+</body>
+</html>
