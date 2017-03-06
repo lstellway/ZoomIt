@@ -1,11 +1,11 @@
-.zoomit-wrapper img {
-    vertical-align: top;
-}
 .zoomit-container {
     overflow: hidden;
     position: relative;
     vertical-align: top;
     display: inline-block;
+}
+.zoomit-container img {
+    vertical-align: top;
 }
 .zoomit-ghost {
     top: 0;
