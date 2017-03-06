@@ -55,6 +55,17 @@
             return options.img.parent().find('.' + options.class.img);
         };
 
+        // Restrict a numerical value between 0 and 1
+        options.restrict = function (val) {
+            if (val > 1) {
+                val = 1;
+            } else if (val < 0) {
+                val = 0;
+            }
+
+            return val;
+        };
+
         // Position zoomed image element
         options.setPosition = function (event) {
             // Add loaded class
@@ -75,8 +86,8 @@
             };
 
             // Percentages
-            options.position.x = (event.pageX - options.position.img.offset.left) / options.position.img.width;
-            options.position.y = (event.pageY - options.position.img.offset.top) / options.position.img.height;
+            options.position.x = options.restrict( (event.pageX - options.position.img.offset.left) / options.position.img.width );
+            options.position.y = options.restrict( (event.pageY - options.position.img.offset.top) / options.position.img.height );
 
             // Offsets
             options.position.zoom.offset = {
@@ -144,6 +155,7 @@
             }).on('mouseleave touchend', function () {
                 options.hide();
             }).on('mousemove touchmove', function (event) {
+                event.stopPropagation();
                 event.preventDefault();
                 options.move(event);
             });
