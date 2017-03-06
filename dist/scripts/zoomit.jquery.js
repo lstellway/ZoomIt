@@ -1,9 +1,14 @@
-(function(code){
-    code(document, window, jQuery);
-}(function(document, window, $){
+(function (factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], factory);
+    } else {
+        factory(jQuery);
+    }
+}(function ($) {
     $.fn.zoomIt = function (options) {
         // Default parameters
         var defaults = {
+            enabled: 1,
             status: 0,
             loaded: 0,
             img: $(this),
@@ -103,7 +108,7 @@
         // Show zoom
         options.show = function (event) {
             // Return early if image is loading
-            if ( options.status === 1 && options.loaded === 0 ) {
+            if ( !options.enable || options.status === 1 && options.loaded === 0 ) {
                 return;
             }
 
@@ -140,6 +145,16 @@
             }
         };
 
+        // Enable
+        options.enable = function () {
+            options.enabled = 1;
+        }
+
+        // Disable
+        options.disable = function () {
+            options.enabled = 0;
+        }
+
         // Initialize
         options.init = function () {
             options.img
@@ -165,11 +180,6 @@
             });
         };
         
-        // Destroy
-        options.destroy = function () {
-            // 
-        };
-
         // Bind zoom data
         $(this).data('zoom', options);
         options.init();
