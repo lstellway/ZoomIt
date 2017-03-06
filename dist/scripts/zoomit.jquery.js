@@ -108,7 +108,7 @@
         // Show zoom
         options.show = function (event) {
             // Return early if image is loading
-            if ( !options.enable || options.status === 1 && options.loaded === 0 ) {
+            if ( !options.enabled || options.status === 1 && options.loaded === 0 ) {
                 return;
             }
 
