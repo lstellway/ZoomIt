@@ -158,6 +158,10 @@
                 event.stopPropagation();
                 event.preventDefault();
                 options.move(event);
+            }).on('click', function () {
+                if (typeof options.click === 'function') {
+                    options.click( options );
+                }
             });
         };
         
