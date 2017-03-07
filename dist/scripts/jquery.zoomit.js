@@ -36,6 +36,13 @@
 
 
 
+        // Execute Callback
+        options.execute = function (e) {
+            if (typeof e === 'string' && typeof options[e] === 'function') {
+                options[e]( options );
+            }
+        };
+
         // Get container
         options.getContainer = function () {
             return $('<div class="' + options.class.container + '"></div>');
@@ -128,6 +135,9 @@
             } else {
                 options.setPosition(event);
             }
+
+            // onZoomIn
+            options.execute('onZoomIn');
         };
 
         // Hide zoom
@@ -136,6 +146,9 @@
             options.imgTag = null;
             options.img.parent().removeClass( options.class.loaded );
             options.getZoomInstance().remove();
+
+            // onZoomOut
+            options.execute('onZoomOut');
         };
 
         // Move zoom
@@ -174,9 +187,7 @@
                 event.preventDefault();
                 options.move(event);
             }).on('click', function () {
-                if (typeof options.click === 'function') {
-                    options.click( options );
-                }
+                options.execute('onClick');
             });
         };
         
