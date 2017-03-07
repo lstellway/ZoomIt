@@ -1,6 +1,25 @@
 # ZoomIt - jQuery Zoom Plugin
 jQuery plugin that adds simple, highly configurable dynamic zoom functionality for your images. 
 
+## Usage
+  - Include jQuery
+  ```
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  ```
+  - Include ZoomIt (CSS / Script)
+  ```
+  <link rel="stylesheet" media="all" href="dist/styles/zoomit.css" />
+  <script src="dist/scripts/jquery.zoomit.min.js"></script>
+  ```
+  - Initialize on image element
+  ```
+  <img id="zoomit-target" src="/path/to/small.jpg" data-zoomed="/path/to/large.jpg" alt="Image To Zoom">
+
+  <script type="text/javascript">
+  $('#zoomit-target').zoomIt();
+  </script>
+  ```
+
 ## Options
   - **img** ([jQuery Object](https://api.jquery.com/Types/#jQuery)) - The "unzoomed" image object that is intended to be zoom
   - **src** ([String](https://api.jquery.com/Types/#String) | [Function](https://api.jquery.com/Types/#Function)) - May either be a string or a function that returns a string of the path to the large image to be zoomed. 
