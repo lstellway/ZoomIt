@@ -189,10 +189,13 @@
             }).on('click', function () {
                 options.execute('onClick');
             });
+
+            // onInit
+            options.execute('onInit');
         };
         
         // Bind zoom data
-        $(this).data('zoom', options);
+        options.img.data('zoom', options);
         options.init();
     };
 }));
