@@ -7,16 +7,22 @@
     cursor: wait;
     display: block;
     position: absolute;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
 }
 .zoomit-zoomed {
     top: 0;
     left: 0;
     opacity: 0;
     z-index: 5;
-    min-width: 100%;
-    min-height: 100%;
     position: absolute;
     transition: all 0.1s;
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
 }
 .zoomit-container {
     overflow: hidden;

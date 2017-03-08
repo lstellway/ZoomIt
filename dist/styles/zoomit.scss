@@ -10,6 +10,8 @@
         display: block;
         position: absolute;
         cursor: $zoomit-cursor-wait;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
     }
 
     &-zoomed {
@@ -17,10 +19,14 @@
         left: 0;
         opacity: 0;
         z-index: 5;
-        min-width: 100%;
-        min-height: 100%;
         position: absolute;
         transition: all $zoomit-ease-time;
+        width: auto !important;
+        height: auto !important;
+        max-width: none !important;
+        max-height: none !important;
+        min-width: 100% !important;
+        min-height: 100% !important;
     }
 
     &-container {
