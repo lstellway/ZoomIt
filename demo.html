@@ -5,13 +5,167 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>ZoomIt</title>
 
-<link rel="stylesheet" href="dist/styles/zoomit.css" media="all" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+
+<style>
+code {
+    padding: 15px;
+    display: block;
+    white-space: pre-line;
+}
+</style>
+
+<link rel="stylesheet" href="dist/styles/zoomit.css">
 </head>
 <body>
 
-<div class="zoomit-wrapper">
-    <img src="assets/images/koala-large.jpg" data-zoomed="assets/images/koala-original.jpg" alt="Fluffy cute Koala">
+<div class="jumbotron">
+    <div class="container">
+        <p>&nbsp;</p>
+        <h1>ZoomIt</h1>
+        <p>jQuery plugin that adds simple, highly configurable dynamic zoom functionality for your images.</p>
+        <p>&nbsp;</p>
+    </div>
 </div>
+
+<p>&nbsp;</p>
+
+<section id="example">
+    <div class="container">
+        <h2>Example</h2>
+        <!-- ZoomIt Example -->
+        <div class="zoomit-wrapper">
+            <img id="zoomit-target" src="assets/images/koala-large.jpg" data-zoomed="assets/images/koala-original.jpg" alt="Fluffy cute Koala">
+        </div>
+    </div>
+</section>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<section id="usage">
+    <div class="container">
+        <h2>Usage</h2>
+        <p>&nbsp;</p>
+
+        <ol class="list">
+            <li class="list-item">
+                Include jQuery
+                <code>&lt;script src="https://code.jquery.com/jquery-3.1.1.min.js"&gt;&lt;/script&gt;</code>
+            </li>
+            <li class="list-item">
+                Include ZoomIt (CSS / Script)
+                <code>&lt;link rel="stylesheet" media="all" href="dist/styles/zoomit.css"&gt;
+                    &lt;script src="dist/scripts/jquery.zoomit.min.js"&gt;&lt;/script&gt;
+                </code>
+            </li>
+            <li class="list-item">
+                Initialize on image element
+                <code>&lt;script src="https://code.jquery.com/jquery-3.1.1.min.js"&gt;&lt;/script&gt;
+                </code>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<section id="options">
+    <div class="container">
+        <h2>Options</h2>
+        <p>&nbsp;</p>
+
+        <ul>
+            <li>
+                <strong>img</strong> (<a href="https://api.jquery.com/Types/#jQuery" target="_blank">jQuery Object</a>)
+                <ul>
+                    <li>The "unzoomed" image object that is intended to zoom</li>
+                </ul>
+            </li>
+            <li>
+                <strong>src</strong> (<a href="https://api.jquery.com/Types/#String" target="_blank">String</a>) | <a href="https://api.jquery.com/Types/#Function" target="_blank">Function</a>)
+                <ul>
+                    <li>May either be a string or a function that returns a string of the path to the large image to be zoomed.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>class</strong> (<a href="https://api.jquery.com/Types/#Object" target="_blank">Object</a>)
+                <ul>
+                    <li>Object containing different class names used by the plugin</li>
+                </ul>
+            </li>
+            <li>
+                <strong>container</strong> (<a href="https://api.jquery.com/Types/#String" target="_blank">String</a>: Default <strong>zoomit-container</strong>)
+                <ul>
+                    <li>Class to be used for the container</li>
+                </ul>
+            </li>
+            <li>
+                <strong>loaded</strong> (<a href="https://api.jquery.com/Types/#String" target="_blank">String</a>: Default <strong>loaded</strong>)
+                <ul>
+                    <li>Class to be used when the zoomed image is loaded</li>
+                </ul>
+            </li>
+            <li>
+                <strong>img</strong> (<a href="https://api.jquery.com/Types/#String" target="_blank">String</a>: Default <strong>zoomit-zoomed</strong>)
+                <ul>
+                    <li>Class to be used for the zoomed image element</li>
+                </ul>
+            </li>
+            <li>
+                <strong>ghost</strong> (<a href="https://api.jquery.com/Types/#String" target="_blank">String</a>: Default <strong>zoomit-ghost</strong>)
+                <ul>
+                    <li>Class to be used for the "ghost" element above the zoomed image element. The "ghost" element is used to watch mouse events.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<section id="events">
+    <div class="container">
+        <h2>Events</h2>
+        <p>&nbsp;</p>
+
+        <ul>
+            <li>
+                <strong>onZoomIn</strong> (<a href="https://api.jquery.com/Types/#Function" target="_blank">Function</a>)
+                <ul>
+                    <li>Callback function that is executed when the image is zoomed</li>
+                    <li>The <strong>options</strong> object is passed as an argument</li>
+                </ul>
+            </li>
+            <li>
+                <strong>onZoomOut</strong> (<a href="https://api.jquery.com/Types/#Function" target="_blank">Function</a>)
+                <ul>
+                    <li>Callback function that is executed when the image zoom is hidden</li>
+                    <li>The <strong>options</strong> object is passed as an argument</li>
+                </ul>
+            </li>
+            <li>
+                <strong>onClick</strong> (<a href="https://api.jquery.com/Types/#Function" target="_blank">Function</a>)
+                <ul>
+                    <li>Callback function that is executed when the zoom area is clicked</li>
+                    <li>The <strong>options</strong> object is passed as an argument</li>
+                </ul>
+            </li>
+            <li>
+                <strong>onInit</strong> (<a href="https://api.jquery.com/Types/#Function" target="_blank">Function</a>)
+                <ul>
+                    <li>Callback function that is executed when the plugin is initialized</li>
+                    <li>The <strong>options</strong> object is passed as an argument</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="dist/scripts/jquery.zoomit.min.js"></script>
@@ -20,7 +174,7 @@
     code(document, window, jQuery);
 }(function(document, window, $){
     $(function(){
-        $('img').zoomIt();
+        $('#zoomit-target').zoomIt();
     });
 }));
 </script>
