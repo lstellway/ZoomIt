@@ -1,6 +1,6 @@
 {
   "name": "zoomit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "jQuery plugin that adds simple, highly configurable dynamic zoom functionality for your images.",
   "main": "index.js",
   "scripts": {
