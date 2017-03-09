@@ -78,12 +78,8 @@
             return val;
         };
 
-        // Position zoomed image element
-        options.setPosition = function (event) {
-            // Add loaded class
-            options.img.parent().addClass( options.class.loaded );
-            options.loaded = 1;
-
+        // Get image dimensions
+        options.getDimensions = function () {
             // Set position
             options.position = {
                 img: {
@@ -96,6 +92,18 @@
                     height: options.getZoomInstance().height()
                 }
             };
+        };
+
+        // Position zoomed image element
+        options.setPosition = function (event) {
+            // Get image dimensions
+            if (options.loaded === 0) {
+                options.getDimensions();
+            }
+
+            // Add loaded class
+            options.img.parent().addClass( options.class.loaded );
+            options.loaded = 1;
 
             // Percentages
             options.position.x = options.restrict( (event.pageX - options.position.img.offset.left) / options.position.img.width );
@@ -143,6 +151,7 @@
         // Hide zoom
         options.hide = function () {
             options.status = 0;
+            options.loaded = 0;
             options.imgTag = null;
             options.img.parent().removeClass( options.class.loaded );
             options.getZoomInstance().remove();
