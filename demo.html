@@ -3,15 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>ZoomIt</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
 <style>
+img {
+    height: auto;
+    max-width: 100%;
+}
 code {
     padding: 15px;
     display: block;
-    white-space: pre-line;
+    word-wrap: break-word;
 }
 </style>
 
@@ -55,7 +60,8 @@ code {
             </li>
             <li class="list-item">
                 Include ZoomIt (CSS / Script)
-                <code>&lt;link rel="stylesheet" media="all" href="dist/styles/zoomit.css"&gt;
+                <code>
+                    &lt;link rel="stylesheet" media="all" href="dist/styles/zoomit.css"&gt;<br>
                     &lt;script src="dist/scripts/jquery.zoomit.min.js"&gt;&lt;/script&gt;
                 </code>
             </li>
@@ -65,6 +71,34 @@ code {
                 </code>
             </li>
         </ol>
+    </div>
+</section>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<section id="bower">
+    <div class="container">
+        <h2>Bower</h2>
+        <p>&nbsp;</p>
+
+        <p>The plugin is available on the Bower registry</p>
+        <code>bower install --save zoomit</code>
+    </div>
+</section>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<section id="npm">
+    <div class="container">
+        <h2>NPM / Yarn</h2>
+        <p>&nbsp;</p>
+
+        <p>The package is also available via the NPM repository. Simply:</p>
+        <code>npm install --save zoomit</code>
+        <p>Or</p>
+        <code>yarn add zoomit</code>
     </div>
 </section>
 
