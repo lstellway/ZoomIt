@@ -25,6 +25,22 @@ jQuery plugin that adds simple, highly configurable dynamic zoom functionality f
   </script>
   ```
 
+## Bower
+The plugin is available on the Bower registry
+```
+bower install --save zoomit
+```
+
+## NPM / Yarn
+The package is also available via the NPM repository. Simply:
+```
+npm install --save zoomit
+```
+Or
+```
+yarn add zoomit
+```
+
 ## Options
   - **img** ([jQuery Object](https://api.jquery.com/Types/#jQuery)) - The "unzoomed" image object that is intended to zoom
   - **src** ([String](https://api.jquery.com/Types/#String) | [Function](https://api.jquery.com/Types/#Function)) - May either be a string or a function that returns a string of the path to the large image to be zoomed.
