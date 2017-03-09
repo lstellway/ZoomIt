@@ -16,7 +16,6 @@
     opacity: 0;
     z-index: 5;
     position: absolute;
-    transition: all 0.1s;
     width: auto !important;
     height: auto !important;
     max-width: none !important;
