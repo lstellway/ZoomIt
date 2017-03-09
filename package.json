@@ -1,0 +1,24 @@
+{
+  "name": "zoomit",
+  "version": "1.0.0",
+  "description": "jQuery plugin that adds simple, highly configurable dynamic zoom functionality for your images.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loganstellway/ZoomIt.git"
+  },
+  "keywords": [
+    "jquery",
+    "zoom",
+    "plugin"
+  ],
+  "author": "Logan Stellway <loganstellway@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/loganstellway/ZoomIt/issues"
+  },
+  "homepage": "https://github.com/loganstellway/ZoomIt#readme"
+}
