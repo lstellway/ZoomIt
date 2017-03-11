@@ -96,6 +96,11 @@
 
         // Position zoomed image element
         options.setPosition = function (event) {
+            // iOS Original Event (Pointer Position)
+            if (typeof event.originalEvent !== 'undefined') {
+                event = event.originalEvent;
+            }
+
             // Get image dimensions
             if (options.loaded === 0) {
                 options.getDimensions();
