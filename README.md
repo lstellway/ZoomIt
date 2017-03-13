@@ -1,6 +1,8 @@
 # ZoomIt - jQuery Zoom Plugin
 jQuery plugin that adds simple, highly configurable dynamic zoom functionality for your images.
 
+[View Demo](https://cdn.rawgit.com/loganstellway/ZoomIt/master/demo.html)
+
 ## Usage
   - Include jQuery
 
